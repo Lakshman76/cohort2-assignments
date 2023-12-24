@@ -4,6 +4,15 @@
 */
 
 function isPalindrome(str) {
+  // Remove specified characters and convert to lowercase
+  str = str.replace(/[,\s.!?]/g, '').toLowerCase();
+
+  // Check if the cleaned string is a palindrome
+  for (let i = 0; i < str.length / 2; i++) {
+    if (str.charAt(i) !== str.charAt(str.length - i - 1)) {
+      return false;
+    }
+  }
   return true;
 }
 
